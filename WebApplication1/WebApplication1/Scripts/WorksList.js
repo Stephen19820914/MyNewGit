@@ -57,7 +57,7 @@ function DeleteView(_CustomerID) {
                 case "true":
                     alert("刪除成功");
                     $('[name="PartialView"]').html('');
-
+                    location.reload();
                     break;
                 case "false":
                     alert("刪除失敗");
