@@ -15,7 +15,7 @@
     @foreach (var element in Model)
     {
         <tr>
-            <td>@element.CustomerID</td>
+            <td><a href="javascript:void(0)" name="Edit" data-customerid="@element.CustomerID">@element.CustomerID</a></td>
             <td>@element.CompanyName</td>
             <td>@element.ContactName</td>
             <td>@element.ContactTitle</td>
@@ -24,3 +24,8 @@
         </tr>
     }
 </table>
+<button name="Create">新增</button>
+<div name="PartialView">
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/WorksList.js"></script>

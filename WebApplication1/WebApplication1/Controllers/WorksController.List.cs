@@ -10,11 +10,11 @@ namespace WebApplication1.Controllers
 {
     public partial class WorksController
     {
-        public ActionResult CustomersList(int pageCnt = 1, int pageRows = 10)
+        public ActionResult List(int pageCnt = 1, int pageRows = 10)
         {
             var DataList = _WorksServices.SelectCustomersListService(pageCnt, pageRows);
             var Output = _Mapper.Map<List<WorksViewModel>>(DataList);
-            return View(Output);
+            return View("CustomersList", Output);
         }
     }
 }
