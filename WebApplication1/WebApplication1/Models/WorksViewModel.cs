@@ -30,6 +30,9 @@ namespace WebApplication1.Models
         public string Phone { get; set; }
         [Required(ErrorMessage = "傳真未填！")]
         public string Fax { get; set; }
+        public int pageCnt { get; set; }
+        public int pageRows { get; set; }
+        public int DataRows { get; set; }
 
         public string ErrorMsg { get; set; }
     }

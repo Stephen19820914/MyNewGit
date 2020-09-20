@@ -8,6 +8,12 @@
     $('[name="Delete"]').click(function () {
         DeleteView($(this).data('customerid'));
     });
+    $('[name="pageRows"]').change(function () {
+        location.href = '/Works/List?pageCnt=1&pageRows=' + $('[name="pageRows"]').val();
+    });
+    $('[name="pageCnt"]').change(function () {
+        location.href = '/Works/List?pageCnt=' + $('[name="pageCnt"] option:selected').text() + '&pageRows=' + $('[name="pageRows"]').val();
+    });
 });
 function AddView()
 {

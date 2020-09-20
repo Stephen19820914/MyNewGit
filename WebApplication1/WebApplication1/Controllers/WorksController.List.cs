@@ -12,6 +12,8 @@ namespace WebApplication1.Controllers
     {
         public ActionResult List(int pageCnt = 1, int pageRows = 10)
         {
+            //pageCnt目前第幾頁
+            //pageRows一頁顯示幾筆
             var DataList = _WorksServices.SelectCustomersListService(pageCnt, pageRows);
             var Output = _Mapper.Map<List<WorksViewModel>>(DataList);
             return View("CustomersList", Output);

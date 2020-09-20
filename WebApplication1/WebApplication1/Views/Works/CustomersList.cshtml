@@ -2,30 +2,80 @@
 @{
     Layout = null;
 }
+@if (Model != null)
+{
+    <div>
+        @{
 
-<table>
-    <tr>
-        <th>客戶代號</th>
-        <th>公司名稱</th>
-        <th>聯絡人</th>
-        <th>聯絡人職稱</th>
-        <th>地址</th>
-        <th>刪除</th>
-    </tr>
-    @foreach (var element in Model)
-    {
+            int TotalRows = Model.Count;
+            int pageRows = 10;
+            int PageNum = 0;
+            int pageCnt = 1;
+            if (TotalRows > 0)
+            {
+                TotalRows = Model[0].DataRows;
+                pageRows = Model[0].pageRows;
+                pageCnt = Model[0].pageCnt;
+                int Remain = TotalRows % pageRows;
+                int Page = TotalRows / pageRows;
+                if (Remain > 0)
+                {
+                    PageNum = Page + 1;
+                }
+                else
+                {
+                    PageNum = Page;
+                }
+            }
+
+        }
+        <p>
+            共 @TotalRows 筆資料，每頁顯示
+            <input type="text" name="pageRows" value="@pageRows" />
+            筆資料, 目前顯示第
+            <select name="pageCnt">
+                @for (int i = 1; i <= PageNum; i++)
+                {
+                    if (i == pageCnt)
+                    {
+                        <option selected>@i</option>
+                    }
+                    else
+                    {
+                        <option>@i</option>
+                    }
+                }
+            </select>
+        </p>
+    </div>
+    <table>
         <tr>
-            <td><a href="javascript:void(0)" name="Edit" data-customerid="@element.CustomerID">@element.CustomerID</a></td>
-            <td>@element.CompanyName</td>
-            <td>@element.ContactName</td>
-            <td>@element.ContactTitle</td>
-            <td>@element.Address</td>
-            <td><a href="javascript:void(0)" name="Delete" data-customerid="@element.CustomerID">Delete</a></td>
+            <th>客戶代號</th>
+            <th>公司名稱</th>
+            <th>聯絡人</th>
+            <th>聯絡人職稱</th>
+            <th>地址</th>
+            <th>刪除</th>
         </tr>
-    }
-</table>
-<button name="Create">新增</button>
-<div name="PartialView">
-</div>
+        @foreach (var element in Model)
+        {
+            <tr>
+                <td><a href="javascript:void(0)" name="Edit" data-customerid="@element.CustomerID">@element.CustomerID</a></td>
+                <td>@element.CompanyName</td>
+                <td>@element.ContactName</td>
+                <td>@element.ContactTitle</td>
+                <td>@element.Address</td>
+                <td><a href="javascript:void(0)" name="Delete" data-customerid="@element.CustomerID">Delete</a></td>
+            </tr>
+        }
+    </table>
+    <button name="Create">新增</button>
+    <div name="PartialView">
+    </div>
+}
+else
+{
+    <h2>現在沒有資料！</h2>
+}
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/WorksList.js"></script>
