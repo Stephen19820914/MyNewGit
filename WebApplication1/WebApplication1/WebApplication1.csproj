@@ -163,7 +163,6 @@
     <Compile Include="Service\Model\WorksinputModel.cs" />
     <Compile Include="Service\Model\WorksOutputModel.cs" />
     <Compile Include="Service\WorksServices.cs" />
-    <None Include="connectionStrings.config" />
     <Compile Include="Controllers\WorksController.List.cs" />
     <Compile Include="Controllers\WorksController.cs" />
     <Compile Include="Global.asax.cs">

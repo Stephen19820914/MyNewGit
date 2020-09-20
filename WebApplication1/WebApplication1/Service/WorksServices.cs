@@ -33,7 +33,10 @@ namespace WebApplication1.Service
                         CompanyName = x.CompanyName,
                         ContactName = x.ContactName,
                         ContactTitle = x.ContactTitle,
-                        Address = x.Address
+                        Address = x.Address,
+                        pageCnt = pageCnt,
+                        pageRows = pageRows,
+                        DataRows = OutputData.Count
                     }).Skip((pageCnt - 1) * pageRows).Take(pageRows).ToList();
                 }
                 else
