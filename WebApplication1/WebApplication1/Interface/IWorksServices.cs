@@ -15,5 +15,7 @@ namespace WebApplication1.Interface
         List<WorksOutputModel> EditCustomersListService(WorksInputModel _WorksInputModel);
 
         string UpdateCustomersService(WorksInputModel _WorksInputModel);
+
+        string DeleteCustomersListService(WorksInputModel _WorksInputModel);
     }
 }
