@@ -18,8 +18,11 @@ namespace WebApplication1.Controllers
 
         public WorksController()
         {
-            this._WorksServices = new WorksServices(System.Web.Configuration.WebConfigurationManager.ConnectionStrings["NorthwindConnectionString"].ToString()); ;
-            _Mapper = new Mapper(new MapperConfiguration(cfg => cfg.CreateMap<WorksOutputModel, WorksViewModel>()));
+            this._WorksServices = new WorksServices(System.Web.Configuration.WebConfigurationManager.ConnectionStrings["NorthwindConnectionString"].ToString());
+            _Mapper=new Mapper(new MapperConfiguration(cfg => {
+                cfg.CreateMap<WorksOutputModel, WorksViewModel>();
+                cfg.CreateMap<WorksViewModel, WorksInputModel>();
+            }));
         }
     }
 }
