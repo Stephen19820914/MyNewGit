@@ -77,7 +77,7 @@ function EditData()
                 case "true":
                     alert("儲存成功");
                     $('[name="PartialView"]').html('');
-
+                    location.reload();
                     break;
                 case "false":
                     alert("儲存失敗");
