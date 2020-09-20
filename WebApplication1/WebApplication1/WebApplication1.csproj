@@ -152,6 +152,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\WorksController.Delete.cs" />
     <Compile Include="Controllers\WorksController.Edit.cs" />
     <Compile Include="Controllers\WorksController.Add.cs" />
     <Compile Include="Models\WorksViewModel.cs" />
