@@ -152,6 +152,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\WorksController.Edit.cs" />
+    <Compile Include="Controllers\WorksController.Add.cs" />
     <Compile Include="Models\WorksViewModel.cs" />
     <Compile Include="Repository\Interface\IWorksRepository.cs" />
     <Compile Include="Repository\Model\Works.cs" />
@@ -168,7 +170,12 @@
     </Compile>
     <Compile Include="Interface\IWorksServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\WorksEdit.js" />
+    <Content Include="Scripts\WorksAdd.js" />
+    <Content Include="Scripts\WorksList.js" />
     <Content Include="Views\Works\CustomersList.cshtml" />
+    <Content Include="Views\Works\Add.cshtml" />
+    <Content Include="Views\Works\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

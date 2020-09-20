@@ -9,5 +9,11 @@ namespace WebApplication1.Interface
     public interface IWorksServices
     {
         List<WorksOutputModel> SelectCustomersListService(int pageCnt, int pageRows);
+
+        string InsertCustomersService(WorksInputModel _WorksInputModel);
+
+        List<WorksOutputModel> EditCustomersListService(WorksInputModel _WorksInputModel);
+
+        string UpdateCustomersService(WorksInputModel _WorksInputModel);
     }
 }

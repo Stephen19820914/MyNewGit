@@ -1,0 +1,79 @@
+﻿@model List<WebApplication1.Models.WorksViewModel>
+
+<table>
+    @if (Model != null)
+    {
+        foreach (var element in Model)
+        {
+            <tr>
+                <td>客戶ID</td>
+                <td>
+                    <label>@element.CustomerID</label>
+                    <input type="hidden" name="CustomerID" value="@element.CustomerID">
+                </td>
+            </tr>
+            <tr>
+                <td>公司名稱</td>
+                <td>
+                    <input type="text" name="CompanyName" value="@element.CompanyName">
+                </td>
+            </tr>
+            <tr>
+                <td>聯絡人</td>
+                <td>
+                    <input type="text" name="ContactName" value="@element.ContactName">
+                </td>
+            </tr>
+            <tr>
+                <td>聯絡人職稱</td>
+                <td>
+                    <input type="text" name="ContactTitle" value="@element.ContactTitle">
+                </td>
+            </tr>
+            <tr>
+                <td>地址</td>
+                <td>
+                    <input type="text" name="Address" value="@element.Address">
+                </td>
+            </tr>
+            <tr>
+                <td>城市</td>
+                <td>
+                    <input type="text" name="City" value="@element.City">
+                </td>
+            </tr>
+            <tr>
+                <td>地區</td>
+                <td>
+                    <input type="text" name="Region" value="@element.Region">
+                </td>
+            </tr>
+            <tr>
+                <td>郵遞區號</td>
+                <td>
+                    <input type="text" name="PostalCode" value="@element.PostalCode">
+                </td>
+            </tr>
+            <tr>
+                <td>國家</td>
+                <td>
+                    <input type="text" name="Country" value="@element.Country">
+                </td>
+            </tr>
+            <tr>
+                <td>電話</td>
+                <td>
+                    <input type="text" name="Phone" value="@element.Phone">
+                </td>
+            </tr>
+            <tr>
+                <td>傳真</td>
+                <td>
+                    <input type="text" name="Fax" value="@element.Fax">
+                </td>
+            </tr>
+        }
+    }
+</table>
+<button name="EditSend">送出</button>
+<script src="~/Scripts/WorksEdit.js"></script>
