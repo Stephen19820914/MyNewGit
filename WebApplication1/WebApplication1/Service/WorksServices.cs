@@ -132,5 +132,14 @@ namespace WebApplication1.Service
             };
             return _worksRepository.UpdateCustomers(_WorksPara);
         }
+
+        public string DeleteCustomersListService(WorksInputModel _WorksInputModel)
+        {
+            WorksPara _WorksPara = new WorksPara()
+            {
+                CustomerID = _WorksInputModel.CustomerID
+            };
+            return _worksRepository.DeteleCustomers(_WorksPara);
+        }
     }
 }

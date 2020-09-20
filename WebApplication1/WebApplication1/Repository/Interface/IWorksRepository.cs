@@ -15,5 +15,7 @@ namespace WebApplication1.Repository.Interface
         List<Works> EditCustomersList(WorksPara _WorksPara);
 
         string UpdateCustomers(WorksPara _WorksPara);
+
+        string DeteleCustomers(WorksPara _WorksPara);
     }
 }

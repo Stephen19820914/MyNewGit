@@ -241,5 +241,47 @@ namespace WebApplication1.Repository
                 return _ErrorMsg;
             }
         }
+
+        public string DeteleCustomers(WorksPara _WorksPara)
+        {
+            string _ErrorMsg = "";
+            int ExecuteResult = 0;
+            using (SqlConnection nowConnection = new SqlConnection(ConnectionString))//使用連接字串初始SqlConnection物件連接資料庫
+            {
+                nowConnection.Open();//開啟連線
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.CommandText = @"DELETE FROM [Customers]
+                                            WHERE [CustomerID] = @CustomerID";
+                    command.Connection = nowConnection;//資料庫連接
+                    command.Parameters.AddWithValue("@CustomerID", _WorksPara.CustomerID);
+                    try
+                    {
+                        ExecuteResult = command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        _ErrorMsg = ex.Message;
+                    }
+                }
+            }
+            if (String.IsNullOrEmpty(_ErrorMsg))
+            {
+                //沒有錯誤訊息
+                if (ExecuteResult > 0)
+                {
+                    return true.ToString().ToLower();
+                }
+                else
+                {
+                    return false.ToString().ToLower();
+                }
+            }
+            else
+            {
+                //有錯誤訊息
+                return _ErrorMsg;
+            }
+        }
     }
 }
