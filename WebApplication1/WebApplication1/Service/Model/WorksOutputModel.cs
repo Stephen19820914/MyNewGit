@@ -18,6 +18,9 @@ namespace WebApplication1.Service.Model
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
+        public int pageCnt { get; set; }
+        public int pageRows { get; set; }
+        public int DataRows { get; set; }
 
         public string ErrorMsg { get; set; }
     }
